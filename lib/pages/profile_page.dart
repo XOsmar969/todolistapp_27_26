@@ -12,14 +12,14 @@ class ProfilePage extends StatelessWidget {
             // Gambar 1
             ClipOval(
               child: Image.asset(
-                "assets/isagi.jpg", // pastikan file ada di assets
+                "assets/Zayyan.jpg", // pastikan file ada di assets
                 width: 100,
                 height: 100,
                 fit: BoxFit.cover,
               ),
             ),
             const SizedBox(height: 16),
-
+  
             // Nama untuk gambar 1
             const Text(
               "Muhammad Zayyan Fahrezi(26)",

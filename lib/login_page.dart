@@ -25,24 +25,9 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Welcome to todolist-app",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.blue,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const Text("Please login using your username and password"),
-            const SizedBox(height: 15),
-
             // Image
             Center(
-              child: Image.asset(
-                'assets/isagi.jpg',
-                width: 100,
-                height: 100,
-              ),
+              child: Image.asset('assets/todo.png', width: 100, height: 100),
             ),
 
             const SizedBox(height: 20),
@@ -67,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
             Center(
               child: CustomButton(
                 text: "Login",
-                
+
                 onPressed: () {
                   if (controllerUsername.text == "admin" &&
                       controllerPassword.text == "admin") {
