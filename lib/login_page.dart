@@ -5,7 +5,7 @@ import 'package:todolistapp_27_26/widgets/widget_textfield.dart';
 import 'package:todolistapp_27_26/routes/routes.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key}); // jangan const
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -36,10 +36,9 @@ class _LoginPageState extends State<LoginPage> {
             const Text("Please login using your username and password"),
             const SizedBox(height: 15),
 
-            // Image
             Center(
               child: Image.asset(
-                'assets/isagi.jpg',
+                'assets/todolist.jpeg',
                 width: 100,
                 height: 100,
               ),
@@ -47,7 +46,6 @@ class _LoginPageState extends State<LoginPage> {
 
             const SizedBox(height: 20),
 
-            // Username input
             MyTextField(
               textEditingController: controllerUsername,
               labelText: "Username",
@@ -55,23 +53,21 @@ class _LoginPageState extends State<LoginPage> {
 
             const SizedBox(height: 10),
 
-            // Password input
             MyTextField(
               textEditingController: controllerPassword,
               labelText: "Password",
+              isPassword: true,
             ),
 
             const SizedBox(height: 25),
 
-            // Button Login
             Center(
               child: CustomButton(
                 text: "Login",
-                
+
                 onPressed: () {
                   if (controllerUsername.text == "admin" &&
-                      controllerPassword.text == "admin") {
-                    // ✅ Pindah ke Dashboard
+                      controllerPassword.text == "admin123") {
                     Get.offAllNamed(AppRoutes.dashboard);
                   } else {
                     Get.snackbar(
