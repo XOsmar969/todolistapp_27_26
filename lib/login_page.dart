@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                       "Login Failed",
                       "Username / Password salah",
                       snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.red.withOpacity(0.2),
+                      backgroundColor: Colors.red.withValues(alpha: 2.2),
                     );
                   }
                 },
