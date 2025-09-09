@@ -62,6 +62,7 @@ flutter:
   assets:
   - assets/isagi.jpg
   - assets/todo.png
+  - assets/todolist.jpeg
   - assets/Zayyan.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see

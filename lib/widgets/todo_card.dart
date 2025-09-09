@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todolistapp_27_26/controllers/todo_controller.dart';
+import 'package:todolistapp_27_26/models/todo_model.dart';
 
 class TodoCard extends StatelessWidget {
   final Todo todo;
-  final VoidCallback? onDone; // optional (nullable)
+  final VoidCallback? onDone;
   final VoidCallback? onDelete;
 
   const TodoCard({super.key, required this.todo, this.onDone, this.onDelete});
@@ -15,15 +16,16 @@ class TodoCard extends StatelessWidget {
       child: ListTile(
         title: Text(
           todo.title,
-          style: TextStyle(
-            decoration: todo.isDone ? TextDecoration.lineThrough : null,
+          style: const TextStyle(
+            decoration: TextDecoration.none, // selalu normal
           ),
         ),
+
         subtitle: Text("${todo.description} • ${todo.category}"),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (onDone != null) // tombol Done hanya muncul kalau ada
+            if (onDone != null)
               IconButton(
                 icon: const Icon(Icons.check, color: Colors.green),
                 onPressed: onDone,
