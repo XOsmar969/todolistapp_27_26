@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                     Get.snackbar(
                       "Login Failed",
                       "Username / Password salah",
-                      snackPosition: SnackPosition.BOTTOM,
+                      snackPosition: SnackPosition.TOP,
                       backgroundColor: Colors.red.withValues(alpha: 2.2),
                     );
                   }
