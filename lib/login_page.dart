@@ -25,6 +25,11 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
+            // Image
+            Center(
+              child: Image.asset('assets/todo.png', width: 100, height: 100),
+
             const Text(
               "Welcome to todolist-app",
               style: TextStyle(
@@ -42,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: 100,
                 height: 100,
               ),
+
             ),
 
             const SizedBox(height: 20),
