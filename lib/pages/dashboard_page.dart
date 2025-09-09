@@ -4,15 +4,11 @@ import 'package:todolistapp_27_26/controllers/home_controller.dart';
 import 'home_page.dart';
 import 'history_page.dart';
 import 'profile_page.dart';
-
+import 'package:todolistapp_27_26/controllers/dashboard_controller.dart';
 class DashboardPage extends StatelessWidget {
   final HomeController homeController = Get.find<HomeController>();
 
-  final List<Widget> pages = [
-    HomePage(),
-    HistoryPage(),
-    ProfilePage(),
-  ];
+
 
   @override
   Widget build(BuildContext context) {

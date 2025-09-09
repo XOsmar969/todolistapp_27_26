@@ -63,6 +63,8 @@ flutter:
   - assets/isagi.jpg
   - assets/todo.png
   - assets/Zayyan.jpg
+  - assets/todolist.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
