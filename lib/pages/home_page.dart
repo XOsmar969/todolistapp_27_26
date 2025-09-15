@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           if (todoController.todos.isEmpty) {
             return const Center(
               child: Text(
-                "Belum ada todo.\nTambahkan todo baru dengan tombol +",
+                "Belum ada todo.\nTambahkan todo  dengan pencet tombol +",
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.grey),
               ),
