@@ -5,9 +5,12 @@ import 'package:todolistapp_27_26/controllers/home_controller.dart';
 import 'home_page.dart';
 import 'history_page.dart';
 import 'profile_page.dart';
-
+import 'package:todolistapp_27_26/controllers/dashboard_controller.dart';
 class DashboardPage extends StatelessWidget {
-  final dashboardController = Get.put(DashboardController());
+  final HomeController homeController = Get.find<HomeController>();
+
+
+
 
   @override
   Widget build(BuildContext context) {
