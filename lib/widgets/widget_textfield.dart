@@ -28,8 +28,6 @@ class _MyTextFieldState extends State<MyTextField> {
         labelText: widget.labelText,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-
-        // ✅ icon hanya muncul kalau isPassword = true
         suffixIcon: widget.isPassword
             ? IconButton(
                 icon: Icon(

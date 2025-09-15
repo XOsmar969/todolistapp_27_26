@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 import 'package:todolistapp_27_26/controllers/auth_controller.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -9,77 +8,74 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(height: 20),
-            const CircleAvatar(
-              radius: 60,
-              backgroundImage: AssetImage('assets/isagi.jpg'),
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              "App Todo-list",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-            const Text("todo@gmail.com", style: TextStyle(color: Colors.grey)),
-            const SizedBox(height: 20),
-
-            Card(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: ListTile(
-                leading: const Icon(Icons.phone, color: Colors.blueAccent),
-                title: const Text("Nomor Telepon"),
-                subtitle: const Text("+62** **** ****"),
-              ),
-            ),
-
-            Card(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: ListTile(
-                leading: const Icon(
-                  Icons.location_on,
-                  color: Colors.blueAccent,
+            const SizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: const [
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage('assets/todolist.jpeg'),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Zayyan",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text("Absen 26", style: TextStyle(color: Colors.grey)),
+                    Text("Role 2", style: TextStyle(color: Colors.grey)),
+                  ],
                 ),
-                title: const Text("Alamat"),
-                subtitle: const Text("SMK RUS"),
-              ),
-            ),
-
-            Card(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: ListTile(
-                leading: const Icon(Icons.info, color: Colors.blueAccent),
-                title: const Text("About"),
-                subtitle: const Text("Aktivitas"),
-              ),
-            ),
-
-            const SizedBox(height: 30),
-
-            // Tombol Logout
-            ElevatedButton.icon(
-              onPressed: () {
-                // Aksi ketika logout ditekan
-                // Contoh: kembali ke halaman login
-                authController.logout();
-              },
-              icon: const Icon(Icons.logout),
-              label: const Text("Logout"),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.redAccent,
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 40,
-                  vertical: 12,
+                const SizedBox(width: 60),
+                Column(
+                  children: const [
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage('assets/todolist.jpeg'),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Osmar",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text("Absen 27", style: TextStyle(color: Colors.grey)),
+                    Text("Role 1", style: TextStyle(color: Colors.grey)),
+                  ],
                 ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  authController.logout();
+                },
+                icon: const Icon(Icons.logout),
+                label: const Text("Logout"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.redAccent,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 12,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
             ),
-
-            const SizedBox(height: 30),
           ],
         ),
       ),

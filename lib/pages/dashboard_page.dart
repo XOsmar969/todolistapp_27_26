@@ -7,7 +7,6 @@ import 'profile_page.dart';
 import 'package:todolistapp_27_26/controllers/dashboard_controller.dart';
 class DashboardPage extends StatelessWidget {
   final HomeController homeController = Get.find<HomeController>();
-  
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(

@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:get/get.dart';
 import 'package:todolistapp_27_26/routes/routes.dart';
 
@@ -14,7 +13,6 @@ class AuthController extends GetxController {
       Get.snackbar("Login Failed", "Username / Password salah");
     }
   }
-
   void logout() {
 Get.defaultDialog(
       title: "Konfirmasi",

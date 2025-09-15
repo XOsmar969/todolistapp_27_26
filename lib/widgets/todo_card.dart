@@ -17,7 +17,7 @@ class TodoCard extends StatelessWidget {
         title: Text(
           todo.title,
           style: const TextStyle(
-            decoration: TextDecoration.none, // selalu normal
+            decoration: TextDecoration.none, 
           ),
         ),
 

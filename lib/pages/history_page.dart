@@ -25,7 +25,19 @@ class HistoryPage extends StatelessWidget {
             final todo = todoController.history[index];
             return TodoCard(
               todo: todo,
-              onDelete: () => todoController.removeHistory(index),
+              onDelete: () {
+                Get.defaultDialog(
+                  title: "Konfirmasi",
+                  middleText: "Yakin ingin menghapus teks tersebut?",
+                  textCancel: "Batal",
+                  textConfirm: "Hapus",
+                  confirmTextColor: Colors.white,
+                  onConfirm: () {
+                    todoController.removeHistory(index);
+                    Get.back(); 
+                  },
+                );
+              },
             );
           },
         );
