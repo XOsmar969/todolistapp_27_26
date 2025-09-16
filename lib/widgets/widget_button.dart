@@ -13,7 +13,6 @@ class CustomButton extends StatelessWidget {
     this.color = Colors.blue,
     this.textColor = Colors.white,
   });
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

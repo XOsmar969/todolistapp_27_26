@@ -15,10 +15,8 @@ class MyTextField extends StatefulWidget {
   @override
   State<MyTextField> createState() => _MyTextFieldState();
 }
-
 class _MyTextFieldState extends State<MyTextField> {
   bool _obscureText = true;
-
   @override
   Widget build(BuildContext context) {
     return TextField(

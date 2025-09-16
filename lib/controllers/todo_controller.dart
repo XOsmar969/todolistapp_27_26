@@ -10,16 +10,21 @@ class TodoController extends GetxController {
   }
 
   void removeTodo(int index) {
-  todos.removeAt(index);
-}
+    todos.removeAt(index);
+  }
 
-void removeHistory(int index) {
-  history.removeAt(index);
-}
+  void removeHistory(int index) {
+    history.removeAt(index);
+  }
+
   void markAsDone(int index) {
     var todo = todos[index];
     todo.isDone = true;
     history.add(todo);
     todos.removeAt(index);
+  }
+
+  void clearTodos() {
+    todos.clear();
   }
 }

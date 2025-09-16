@@ -48,7 +48,6 @@ class AddTodoPage extends StatelessWidget {
                   );
                   return;
                 }
-
                 todoController.addTodo(
                   titleCtrl.text,
                   descCtrl.text,

@@ -28,7 +28,7 @@ class HistoryPage extends StatelessWidget {
               onDelete: () {
                 Get.defaultDialog(
                   title: "Konfirmasi",
-                  middleText: "Yakin ingin menghapus teks tersebut?",
+                  middleText: "Yakin ingin menghapus history ini?",
                   textCancel: "Batal",
                   textConfirm: "Hapus",
                   confirmTextColor: Colors.white,
