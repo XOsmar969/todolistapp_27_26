@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todolistapp_27_26/routes/routes.dart';
-import 'package:todolistapp_27_26/login_page.dart';
+import 'package:todolistapp_27_26/pages/login_page.dart';
 import 'package:todolistapp_27_26/pages/dashboard_page.dart';
 import 'package:todolistapp_27_26/pages/add_todo_page.dart';
 import 'package:todolistapp_27_26/bindings/auth_binding.dart';

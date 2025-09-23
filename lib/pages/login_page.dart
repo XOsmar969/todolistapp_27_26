@@ -2,19 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todolistapp_27_26/widgets/widget_button.dart';
 import 'package:todolistapp_27_26/widgets/widget_textfield.dart';
-import 'package:todolistapp_27_26/routes/routes.dart';
+import 'package:todolistapp_27_26/controllers/auth_controller.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   final TextEditingController controllerUsername = TextEditingController();
   final TextEditingController controllerPassword = TextEditingController();
-  String statusLogin = "login status";
+  final AuthController authController = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -64,19 +59,11 @@ class _LoginPageState extends State<LoginPage> {
             Center(
               child: CustomButton(
                 text: "Login",
-
                 onPressed: () {
-                  if (controllerUsername.text == "admin" &&
-                      controllerPassword.text == "admin123") {
-                    Get.offAllNamed(AppRoutes.dashboard);
-                  } else {
-                    Get.snackbar(
-                      "Login Failed",
-                      "Username / Password salah",
-                      snackPosition: SnackPosition.TOP,
-                      backgroundColor: Colors.red.withValues(alpha: 2.2),
-                    );
-                  }
+                  authController.login(
+                    controllerUsername.text,
+                    controllerPassword.text,
+                  );
                 },
               ),
             ),

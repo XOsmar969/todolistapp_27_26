@@ -12,7 +12,13 @@ class AuthController extends GetxController {
       isLoggedIn.value = true;
       Get.offAllNamed(AppRoutes.dashboard);
     } else {
-      Get.snackbar("Login Failed", "Username / Password salah");
+      Get.snackbar(
+        "Login Failed",
+        "Username / Password salah",
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: const Color(0xFFFF0000),
+        colorText: const Color(0xFFFFFFFF),
+      );
     }
   }
 
@@ -25,7 +31,7 @@ class AuthController extends GetxController {
       confirmTextColor: const Color(0xFFFFFFFF),
       onConfirm: () {
         todoController.clearTodos();
-
+        isLoggedIn.value = false;
         Get.offAllNamed(AppRoutes.login);
       },
     );

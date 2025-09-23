@@ -20,7 +20,6 @@ class TodoCard extends StatelessWidget {
             decoration: TextDecoration.none, 
           ),
         ),
-
         subtitle: Text("${todo.description} • ${todo.category}"),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
