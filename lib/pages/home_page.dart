@@ -29,30 +29,10 @@ class HomePage extends StatelessWidget {
               return TodoCard(
                 todo: todo,
                 onDone: () {
-                  Get.defaultDialog(
-                    title: "Konfirmasi",
-                    middleText: "Yakin ingin tambah aktivitas di history?",
-                    textCancel: "Batal",
-                    textConfirm: "Ya",
-                    confirmTextColor: Colors.white,
-                    onConfirm: () {
-                      todoController.markAsDone(index);
-                      Get.back();
-                    },
-                  );
+                  todoController.markAsDone(index);
                 },
                 onDelete: () {
-                  Get.defaultDialog(
-                    title: "Konfirmasi",
-                    middleText: "Yakin ingin menghapus todo ini?",
-                    textCancel: "Batal",
-                    textConfirm: "Hapus",
-                    confirmTextColor: Colors.white,
-                    onConfirm: () {
-                      todoController.removeTodo(index);
-                      Get.back();
-                    },
-                  );
+                  todoController.removeTodo(index);
                 },
               );
             },

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todolistapp_27_26/controllers/todo_controller.dart';
 import 'package:todolistapp_27_26/models/todo_model.dart';
 
 class TodoCard extends StatelessWidget {

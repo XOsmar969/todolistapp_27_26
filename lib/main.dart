@@ -7,7 +7,8 @@ import 'package:todolistapp_27_26/controllers/dashboard_controller.dart';
 
 void main() {
   Get.put(TodoController());
-  Get.put(DashboardController()); // inisialisasi sekali
+  Get.put(DashboardController()); 
+  
   runApp(const MyApp());
 }
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: AppRoutes.login,
+      initialRoute: AppRoutes.splashscreen,
       getPages: AppPages.pages,
     );
   }

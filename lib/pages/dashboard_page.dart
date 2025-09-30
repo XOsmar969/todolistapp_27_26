@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'home_page.dart';
-import 'history_page.dart';
-import 'profile_page.dart';
 import 'package:todolistapp_27_26/controllers/dashboard_controller.dart';
 class DashboardPage extends StatelessWidget {
   final DashboardController dashboardController = Get.find<DashboardController>();

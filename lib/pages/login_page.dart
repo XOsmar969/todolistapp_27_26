@@ -6,9 +6,6 @@ import 'package:todolistapp_27_26/controllers/auth_controller.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
-
-  final TextEditingController controllerUsername = TextEditingController();
-  final TextEditingController controllerPassword = TextEditingController();
   final AuthController authController = Get.find<AuthController>();
 
   @override
@@ -30,7 +27,6 @@ class LoginPage extends StatelessWidget {
             ),
             const Text("Please login using your username and password"),
             const SizedBox(height: 15),
-
             Center(
               child: Image.asset(
                 'assets/todolist.jpeg',
@@ -38,34 +34,22 @@ class LoginPage extends StatelessWidget {
                 height: 100,
               ),
             ),
-
             const SizedBox(height: 20),
-
             MyTextField(
-              textEditingController: controllerUsername,
+              textEditingController: authController.controllerUsername,
               labelText: "Username",
             ),
-
             const SizedBox(height: 10),
-
             MyTextField(
-              textEditingController: controllerPassword,
+              textEditingController: authController.controllerPassword,
               labelText: "Password",
               isPassword: true,
             ),
-
             const SizedBox(height: 25),
-
-            Center(
-              child: CustomButton(
-                text: "Login",
-                onPressed: () {
-                  authController.login(
-                    controllerUsername.text,
-                    controllerPassword.text,
-                  );
-                },
-              ),
+            CustomButton(
+              text: "Login",
+              onPressed: authController.login,
+              backgroundColor: Colors.green,
             ),
           ],
         ),

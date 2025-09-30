@@ -4,6 +4,7 @@ import 'package:todolistapp_27_26/controllers/todo_controller.dart';
 import 'package:todolistapp_27_26/widgets/todo_card.dart';
 
 class HistoryPage extends StatelessWidget {
+  HistoryPage({super.key});
   final TodoController todoController = Get.find<TodoController>();
 
   @override
@@ -22,9 +23,9 @@ class HistoryPage extends StatelessWidget {
         return ListView.builder(
           itemCount: todoController.history.length,
           itemBuilder: (context, index) {
-            final todo = todoController.history[index];
+            final HistoryItem = todoController.history[index];
             return TodoCard(
-              todo: todo,
+              todo: HistoryItem,
               onDelete: () {
                 Get.defaultDialog(
                   title: "Konfirmasi",
@@ -34,7 +35,7 @@ class HistoryPage extends StatelessWidget {
                   confirmTextColor: Colors.white,
                   onConfirm: () {
                     todoController.removeHistory(index);
-                    Get.back(); 
+                    Get.back();
                   },
                 );
               },
