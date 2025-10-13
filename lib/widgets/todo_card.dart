@@ -3,10 +3,17 @@ import 'package:todolistapp_27_26/models/todo_model.dart';
 
 class TodoCard extends StatelessWidget {
   final Todo todo;
+  final VoidCallback? onEdit;   // 🔹 Tambah callback edit
   final VoidCallback? onDone;
   final VoidCallback? onDelete;
 
-  const TodoCard({super.key, required this.todo, this.onDone, this.onDelete});
+  const TodoCard({
+    super.key,
+    required this.todo,
+    this.onEdit,
+    this.onDone,
+    this.onDelete,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +23,19 @@ class TodoCard extends StatelessWidget {
         title: Text(
           todo.title,
           style: const TextStyle(
-            decoration: TextDecoration.none, 
+            decoration: TextDecoration.none,
           ),
         ),
         subtitle: Text("${todo.description} • ${todo.category}"),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
+          
+            if (onEdit != null)
+              IconButton(
+                icon: const Icon(Icons.edit, color: Colors.blue),
+                onPressed: onEdit,
+              ),
             if (onDone != null)
               IconButton(
                 icon: const Icon(Icons.check, color: Colors.green),

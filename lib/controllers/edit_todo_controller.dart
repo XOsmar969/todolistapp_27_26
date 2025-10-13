@@ -11,21 +11,17 @@ class EditTodoController extends GetxController {
   final TextEditingController descCtrl = TextEditingController();
   RxString selectedCategory = ''.obs;
   RxBool isDone = false.obs;
-
   int? todoIndex;
   Todo? currentTodo;
 
-  void setEditData(Todo todo, int index) {
-    currentTodo = todo;
-    todoIndex = index;
-    titleCtrl.text = todo.title;
-    descCtrl.text = todo.description;
-    selectedCategory.value = todo.category;
-    isDone.value = todo.isDone;
-  }
-
-
-
+ void setEditData(Todo todo, int index) {
+  currentTodo = todo;
+  todoIndex = todo.id; 
+  titleCtrl.text = todo.title;
+  descCtrl.text = todo.description;
+  selectedCategory.value = todo.category;
+  isDone.value = todo.isDone;
+}
   Future<void> updateTodo() async {
     if (currentTodo == null || todoIndex == null) return;
 
@@ -44,7 +40,7 @@ class EditTodoController extends GetxController {
       return;
     }
     await _dbHelper.updateTodo(
-      todoIndex! + 1, 
+      todoIndex!, 
       title,
       desc,
       category,

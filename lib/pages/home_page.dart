@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todolistapp_27_26/controllers/edit_todo_controller.dart';
 import 'package:todolistapp_27_26/controllers/todo_controller.dart';
 import 'package:todolistapp_27_26/widgets/todo_card.dart';
 import 'package:todolistapp_27_26/routes/routes.dart';
+import 'package:todolistapp_27_26/pages/edit_todo_page.dart';
 
 class HomePage extends StatelessWidget {
   final TodoController todoController = Get.find<TodoController>();
+  final EditTodoController editTodoController = Get.put(EditTodoController());
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,10 @@ class HomePage extends StatelessWidget {
                 },
                 onDelete: () {
                   todoController.removeTodo(index);
+                },
+                onEdit: () {
+                  editTodoController.setEditData(todo, index);
+                  Get.to(() => EditTodoPage());
                 },
               );
             },
