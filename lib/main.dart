@@ -4,11 +4,13 @@ import 'package:todolistapp_27_26/controllers/todo_controller.dart';
 import 'package:todolistapp_27_26/routes/pages.dart';
 import 'package:todolistapp_27_26/routes/routes.dart';
 import 'package:todolistapp_27_26/controllers/dashboard_controller.dart';
+import 'package:todolistapp_27_26/controllers/auth_controller.dart';
 
 void main() {
   Get.put(TodoController());
-  Get.put(DashboardController()); 
-  
+  Get.put(DashboardController());
+  Get.put(AuthController());
+
   runApp(const MyApp());
 }
 

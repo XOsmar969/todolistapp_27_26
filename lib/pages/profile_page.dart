@@ -7,7 +7,6 @@ import 'package:todolistapp_27_26/widgets/profile_card.dart';
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});
   final AuthController authController = Get.put(AuthController());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

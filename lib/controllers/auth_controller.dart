@@ -1,20 +1,38 @@
-import 'dart:ui';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todolistapp_27_26/routes/routes.dart';
 import 'package:todolistapp_27_26/controllers/todo_controller.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthController extends GetxController {
   var isLoggedIn = false.obs;
   final TextEditingController controllerUsername = TextEditingController();
   final TextEditingController controllerPassword = TextEditingController();
   final TodoController todoController = Get.find<TodoController>();
+
+  @override
+  void onInit() {
+    super.onInit();
+    checkLoginStatus();
+  }
+
+  void checkLoginStatus() async {
+    final prefs = await SharedPreferences.getInstance();
+    final savedUsername = prefs.getString("username");
+
+    if (savedUsername != null) {
+      isLoggedIn.value = true;
+      Future.microtask(() => Get.offAllNamed(AppRoutes.dashboard));
+    }
+  }
+
+ 
   login() async {
     if (controllerUsername.text == "admin" &&
         controllerPassword.text == "admin123") {
       final prefs = await SharedPreferences.getInstance();
-      prefs.setString("username", controllerUsername.text);
+      await prefs.setString("username", controllerUsername.text);
+      isLoggedIn.value = true;
       Get.offAllNamed(AppRoutes.dashboard);
     } else {
       Get.snackbar(
@@ -27,6 +45,7 @@ class AuthController extends GetxController {
     }
   }
 
+ 
   logout() {
     Get.defaultDialog(
       title: "Konfirmasi",
